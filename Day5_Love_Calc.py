@@ -1,6 +1,6 @@
 # Pizza order system
-yourname = input("Your name ")
-theirname = input("Their name")
+yourname = input("Your name: ")
+theirname = input("Their name: ")
 
 yourname = yourname.lower() + theirname.lower()
 
