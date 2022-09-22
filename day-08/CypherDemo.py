@@ -6,13 +6,24 @@ def encode(char, shift):
         return char
     return alphabet[alphabet.index(char)+shift]
 
+def decode(char, shift):
+    print(f"Char is {char} with shift {shift}")
+    if char == ' ':
+        return char
+    return alphabet[alphabet.index(char)-shift]
+
 
 text=input("Input a text: ").lower()
 shift=int(input("Input shift: "))
+direction=input("Direction : ")
 
-encrypted_text=""
-for ch in text:
-    encrypted_text += encode(ch, shift)
+final_text=""
+if direction == "encode":
+    for ch in text:
+        final_text += encode(ch, shift)
+elif direction == "decode":
+    for ch in text:
+        final_text += decode(ch, shift)
 
-print(f"Encrypted word is {encrypted_text}")
+print(f"Final word is {final_text}")
 
